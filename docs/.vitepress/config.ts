@@ -14,9 +14,9 @@ export default defineConfig(({ command }) => {
       resolve: {
         alias: {
           '@examples': resolve(__dirname, '../examples'),
-          '@infui/theme': resolve(__dirname, '../../packages/theme'),
-          '@infui/components': resolve(__dirname, '../../packages/components/src/index.ts'),
-          'inf-ui': resolve(__dirname, '../../packages/infui/src/index.ts'),
+          '@inf-ui/theme': resolve(__dirname, '../../packages/theme'),
+          '@inf-ui/components': resolve(__dirname, '../../packages/components/src/index.ts'),
+          '@jackiew/inf-ui': resolve(__dirname, '../../packages/infui/src/index.ts'),
         },
       },
       css: {

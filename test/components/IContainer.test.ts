@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import { IContainer } from 'inf-ui'
+import { IContainer } from '@jackiew/inf-ui'
 
 describe('IContainer', () => {
   it('默认渲染 i-container', () => {

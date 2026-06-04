@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import { IApp, IHeader } from 'inf-ui'
+import { IApp, IHeader } from '@jackiew/inf-ui'
 import { h } from 'vue'
 
 const wrap = (props = {}) =>

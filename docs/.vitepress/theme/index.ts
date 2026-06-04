@@ -5,9 +5,9 @@ import DemoBlock from './components/DemoBlock.vue'
 import HomePage from './components/HomePage.vue'
 import NotFoundPage from './components/NotFoundPage.vue'
 import LayoutPreview from './components/LayoutPreview.vue'
-import { InfUI } from 'inf-ui'
+import { InfUI } from '@jackiew/inf-ui'
 import './styles/overrides.scss'
-import '@infui/theme/src/index.scss'
+import '@inf-ui/theme/src/index.scss'
 import 'virtual:inf.css'
 
 export default {

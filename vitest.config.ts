@@ -11,8 +11,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      'inf-ui': resolve(__dirname, './packages/infui/src/index.ts'),
-      '@infui/components': resolve(__dirname, './packages/components/src/index.ts'),
+      '@jackiew/inf-ui': resolve(__dirname, './packages/infui/src/index.ts'),
+      '@inf-ui/components': resolve(__dirname, './packages/components/src/index.ts'),
     },
   },
 })

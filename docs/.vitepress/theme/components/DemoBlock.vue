@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { PhCode, PhCaretUp, PhCopy, PhCheck } from '@phosphor-icons/vue'
-import { IIcon, IButton } from '@infui/components'
+import { IIcon, IButton } from '@inf-ui/components'
 
 const props = defineProps<{
   source: string // 原始源码，用于复制

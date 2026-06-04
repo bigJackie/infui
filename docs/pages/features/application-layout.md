@@ -54,9 +54,9 @@ components/application/layout_mobile
 :::
 
 ### Footer Fixed 变体
-以上所有布局的 Footer 均支持 ⁠fixed 属性，固定在视口底部：
+以上所有布局的 Footer 均支持 fixed 属性，固定在视口底部：
 ```vue
-<IFooter fixed>© 2026 inf-ui</IFooter>
+<IFooter fixed>© 2026 Infinity UI</IFooter>
 ```
 
 ## 应用布局 API

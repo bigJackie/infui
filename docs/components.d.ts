@@ -10,7 +10,7 @@ import type {
   IListGroup,
   IIcon,
   IButton,
-} from 'inf-ui'
+} from '@jackiew/inf-ui'
 import type LayoutPreview from './.vitepress/theme/components/LayoutPreview.vue'
 import type DemoBlock from './.vitepress/theme/components/DemoBlock.vue'
 

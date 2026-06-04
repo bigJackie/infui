@@ -9,7 +9,7 @@ export default defineConfig([
     dts: true,
     clean: true,
     external: ['vue', '@phosphor-icons/vue'],
-    noExternal: ['@infui/components'],
+    noExternal: ['@inf-ui/components'],
     esbuildPlugins: [vue()],
     onSuccess: async () => {
       // build 完成后把 theme CSS 复制进 dist

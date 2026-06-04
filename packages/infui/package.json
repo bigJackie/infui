@@ -1,5 +1,5 @@
 {
-  "name": "inf-ui",
+  "name": "@jackiew/inf-ui",
   "type": "module",
   "version": "0.0.1",
   "description": "Infui is a UI framework for Vue 3",
@@ -21,8 +21,8 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@infui/components": "workspace:*",
-    "@infui/theme": "workspace:*"
+    "@inf-ui/components": "workspace:*",
+    "@inf-ui/theme": "workspace:*"
   },
   "peerDependencies": {
     "vue": "^3.5.35"

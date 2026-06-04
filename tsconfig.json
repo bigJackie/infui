@@ -23,9 +23,9 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@infui/components": ["./packages/components/src/index.ts"],
-      "@infui/theme": ["./packages/theme/src/index.scss"],
-      "inf-ui": ["./packages/infui/src/index.ts"]
+      "@inf-ui/components": ["./packages/components/src/index.ts"],
+      "@inf-ui/theme": ["./packages/theme/src/index.scss"],
+      "@jackiew/inf-ui": ["./packages/infui/src/index.ts"]
     }
   },
   "include": ["docs/**/*.ts", "docs/**/*.vue", "docs/components.d.ts"],

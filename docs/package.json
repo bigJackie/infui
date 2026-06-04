@@ -1,5 +1,5 @@
 {
-  "name": "@infui/docs",
+  "name": "@inf-ui/docs",
   "private": true,
   "type": "module",
   "version": "0.0.1",
@@ -20,9 +20,9 @@
     "vue": "^3.5.35"
   },
   "dependencies": {
-    "@infui/theme": "workspace:*",
+    "@inf-ui/theme": "workspace:*",
     "@phosphor-icons/vue": "^2.2.1",
     "inf-css": "^0.0.2",
-    "inf-ui": "workspace:*"
+    "@jackiew/inf-ui": "workspace:*"
   }
 }

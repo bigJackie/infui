@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { IAside, IButton } from 'inf-ui'
+import { IAside, IButton } from '@jackiew/inf-ui'
 import { PhList } from '@phosphor-icons/vue'
 const asideRef = ref<InstanceType<typeof IAside>>()
 </script>

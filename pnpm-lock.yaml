@@ -8,7 +8,7 @@ importers:
 
   .:
     dependencies:
-      inf-ui:
+      '@jackiew/inf-ui':
         specifier: workspace:*
         version: link:packages/infui
     devDependencies:
@@ -45,18 +45,18 @@ importers:
 
   docs:
     dependencies:
-      '@infui/theme':
+      '@inf-ui/theme':
         specifier: workspace:*
         version: link:../packages/theme
+      '@jackiew/inf-ui':
+        specifier: workspace:*
+        version: link:../packages/infui
       '@phosphor-icons/vue':
         specifier: ^2.2.1
         version: 2.2.1(vue@3.5.35(typescript@6.0.3))
       inf-css:
         specifier: ^0.0.2
         version: 0.0.2(vite@8.0.16(@types/node@25.9.1)(esbuild@0.27.7)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.100.0))
-      inf-ui:
-        specifier: workspace:*
-        version: link:../packages/infui
     devDependencies:
       sass-embedded:
         specifier: ^1.100.0
@@ -95,10 +95,10 @@ importers:
 
   packages/infui:
     dependencies:
-      '@infui/components':
+      '@inf-ui/components':
         specifier: workspace:*
         version: link:../components
-      '@infui/theme':
+      '@inf-ui/theme':
         specifier: workspace:*
         version: link:../theme
       vue:

@@ -1,5 +1,5 @@
 {
-  "name": "@infui/components",
+  "name": "@inf-ui/components",
   "type": "module",
   "version": "0.0.1",
   "description": "Infui ui components package for Vue 3",

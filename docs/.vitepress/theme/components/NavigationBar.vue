@@ -72,7 +72,7 @@ const navigate = (link?: string) => {
 
 <style scoped lang="scss">
 // 样式保持不变
-@use '@infui/theme/src/mixins/layout' as *;
+@use '@inf-ui/theme/src/mixins/layout' as *;
 
 .navigation-bar {
   @include flex-col;

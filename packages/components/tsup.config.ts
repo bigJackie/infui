@@ -6,6 +6,6 @@ export default defineConfig({
   format: ['esm', 'cjs'],
   dts: false,
   clean: true,
-  external: ['vue', '@infui/theme', '@phosphor-icons/vue'],
+  external: ['vue', '@inf-ui/theme', '@phosphor-icons/vue'],
   esbuildPlugins: [vue()],
 })

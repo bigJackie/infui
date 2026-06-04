@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, beforeEach } from 'vitest'
-import { IApp } from 'inf-ui'
+import { IApp } from '@jackiew/inf-ui'
 
 describe('IApp', () => {
   beforeEach(() => {

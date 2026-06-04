@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import { IApp, IAside } from 'inf-ui'
+import { IApp, IAside } from '@jackiew/inf-ui'
 import { h, nextTick } from 'vue'
 
 // slots 类型：key → 返回 vnode 的函数

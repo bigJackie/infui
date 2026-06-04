@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PhRocketLaunch, PhPaintBrush, PhCode, PhGithubLogo } from '@phosphor-icons/vue'
-import { useGlobalConfig } from 'inf-ui'
+import { useGlobalConfig } from '@jackiew/inf-ui'
 import { withBase } from 'vitepress'
 
 const { INFUI_GITHUB_URL } = useGlobalConfig()
@@ -61,7 +61,7 @@ const features = [
           <span class="hero__install-cmd">
             <span class="hero__install-prefix">$</span>
             pnpm add
-            <span class="hero__install-pkg">inf-ui</span>
+            <span class="hero__install-pkg">@jackiew/inf-ui</span>
           </span>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { inject, ref } from 'vue'
-import { useGlobalConfig, useAppContext, IIcon } from 'inf-ui'
+import { useGlobalConfig, useAppContext, IIcon } from '@jackiew/inf-ui'
 import { PhList, PhGithubLogo, PhTranslate, PhMoon, PhSun } from '@phosphor-icons/vue'
 import VPNavBarSearch from 'vitepress/dist/client/theme-default/components/VPNavBarSearch.vue'
 import { withBase } from 'vitepress'
@@ -85,7 +85,7 @@ const isMobile = inject('isMobile')
 </template>
 
 <style scoped lang="scss">
-@use '@infui/theme/src/mixins' as *;
+@use '@inf-ui/theme/src/mixins' as *;
 
 .app-bar {
   @include flex-row;

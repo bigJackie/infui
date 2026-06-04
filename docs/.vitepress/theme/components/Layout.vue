@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import { IApp, IHeader, IAside, IContainer, IMain, globalTheme, useBreakpoint } from 'inf-ui'
+import {
+  IApp,
+  IHeader,
+  IAside,
+  IContainer,
+  IMain,
+  globalTheme,
+  useBreakpoint,
+} from '@jackiew/inf-ui'
 import { useRouter, useData } from 'vitepress'
 import { watch, nextTick, onMounted, onUnmounted, ref, provide } from 'vue'
 import AppBar from './AppBar.vue'
