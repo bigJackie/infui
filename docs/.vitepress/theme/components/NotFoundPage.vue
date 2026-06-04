@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { PhHouseSimple, PhArrowLeft } from '@phosphor-icons/vue'
-import { useRouter } from 'vitepress'
+import { useRouter, withBase } from 'vitepress'
 
 const router = useRouter()
 
 const goBack = () => window.history.back()
+const goHome = () => router.go(withBase('/'))
 </script>
 
 <template>
@@ -16,7 +17,7 @@ const goBack = () => window.history.back()
       <p class="not-found__desc">你访问的页面可能已被移除、重命名，或者从未存在过。</p>
 
       <div class="not-found__actions">
-        <IButton @click="router.go('/')">
+        <IButton @click="goHome">
           <template #prepend>
             <IIcon :is="PhHouseSimple" size="sm" />
           </template>
@@ -34,6 +35,7 @@ const goBack = () => window.history.back()
 </template>
 
 <style scoped lang="scss">
+// 样式保持不变
 @use '../../../../packages/theme/src/mixins/layout' as *;
 
 .not-found {

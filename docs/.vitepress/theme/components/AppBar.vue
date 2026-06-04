@@ -3,6 +3,7 @@ import { inject, ref } from 'vue'
 import { useGlobalConfig, useAppContext, IIcon } from 'inf-ui'
 import { PhList, PhGithubLogo, PhTranslate, PhMoon, PhSun } from '@phosphor-icons/vue'
 import VPNavBarSearch from 'vitepress/dist/client/theme-default/components/VPNavBarSearch.vue'
+import { withBase } from 'vitepress'
 
 const { INFUI_GITHUB_URL } = useGlobalConfig()
 
@@ -25,7 +26,7 @@ const isMobile = inject('isMobile')
   <div class="app-bar">
     <!-- ── Brand：logo + 汉堡按钮 ── -->
     <div class="app-bar__brand">
-      <a class="app-bar__logo" href="/">
+      <a class="app-bar__logo" :href="withBase('/')">
         <span class="app-bar__logo-mark">∞</span>
         <span class="app-bar__logo-text">Infinity UI</span>
       </a>

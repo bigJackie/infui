@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { PhRocketLaunch, PhPaintBrush, PhCode, PhGithubLogo } from '@phosphor-icons/vue'
 import { useGlobalConfig } from 'inf-ui'
+import { withBase } from 'vitepress'
 
 const { INFUI_GITHUB_URL } = useGlobalConfig()
 
@@ -44,8 +45,12 @@ const features = [
         </p>
 
         <div class="hero__actions">
-          <a class="hero__btn hero__btn--primary" href="/guide/getting-started">快速开始</a>
-          <a class="hero__btn hero__btn--outline" href="/components/button">浏览组件</a>
+          <a class="hero__btn hero__btn--primary" :href="withBase('/guide/getting-started')">
+            快速开始
+          </a>
+          <a class="hero__btn hero__btn--outline" :href="withBase('/components/button')">
+            浏览组件
+          </a>
           <a class="hero__btn hero__btn--ghost" :href="INFUI_GITHUB_URL" target="_blank">
             <IIcon :is="PhGithubLogo" size="sm" />
             GitHub

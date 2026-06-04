@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useData, useRouter } from 'vitepress'
+import { useData, useRouter, withBase } from 'vitepress'
 
 interface NavItem {
   text: string
@@ -35,7 +35,7 @@ const sections = computed(() => {
 
 const navigate = (link?: string) => {
   if (link) {
-    router.go(link)
+    router.go(withBase(link))
   }
 }
 </script>
@@ -71,6 +71,7 @@ const navigate = (link?: string) => {
 </template>
 
 <style scoped lang="scss">
+// 样式保持不变
 @use '@infui/theme/src/mixins/layout' as *;
 
 .navigation-bar {
