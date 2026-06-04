@@ -1,0 +1,21 @@
+:root {
+  // 圆角
+  --inf-radius-sm:   4px;
+  --inf-radius-md:   8px;
+  --inf-radius-lg:   12px;
+  --inf-radius-full: 9999px;
+
+  // 阴影
+  --inf-shadow-sm: 0 1px 3px rgba(0,0,0,.12);
+  --inf-shadow-md: 0 4px 12px rgba(0,0,0,.15);
+  --inf-shadow-lg: 0 8px 24px rgba(0,0,0,.18);
+
+  // 过渡
+  --inf-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // 层级
+  --inf-z-sidebar:  100;
+  --inf-z-header:   200;
+  --inf-z-modal:    300;
+  --inf-z-toast:    400;
+}

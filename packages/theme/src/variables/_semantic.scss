@@ -1,0 +1,95 @@
+.i-application--light {
+  // ── 背景层 ────────────────────────────────────────────────────────────────
+  --inf-color-background:            var(--inf-white);
+  --inf-color-surface:               var(--inf-gray-100);
+  --inf-color-on-background:         var(--inf-gray-900);
+  --inf-color-on-surface:            var(--inf-gray-700);
+  --inf-color-on-surface-muted:      var(--inf-gray-400);
+
+  // ── 文字语义别名 ───────────────────────────────────────────────────────────
+  --inf-color-text-primary:          var(--inf-gray-900);
+  --inf-color-text-secondary:        var(--inf-gray-500);
+
+  // ── Primary（品牌主色：蓝）────────────────────────────────────────────────
+  --inf-color-primary:               var(--inf-blue-500);
+  --inf-color-on-primary:            var(--inf-white);
+  --inf-color-primary-light:         var(--inf-blue-50);
+
+  // ── Secondary（辅助色：紫）────────────────────────────────────────────────
+  --inf-color-secondary:             var(--inf-violet-500);
+  --inf-color-on-secondary:          var(--inf-white);
+  --inf-color-secondary-light:       var(--inf-violet-50);
+
+  // ── Tertiary（点缀色：青）─────────────────────────────────────────────────
+  --inf-color-tertiary:              var(--inf-teal-500);
+  --inf-color-on-tertiary:           var(--inf-white);
+  --inf-color-tertiary-light:        var(--inf-teal-50);
+
+  // ── 交互状态 ───────────────────────────────────────────────────────────────
+  --inf-color-hover:   color-mix(in srgb, var(--inf-gray-900)  4%, transparent);
+  --inf-color-press:   color-mix(in srgb, var(--inf-gray-900)  8%, transparent);
+
+  // ── 分割线 ─────────────────────────────────────────────────────────────────
+  --inf-color-border:                var(--inf-gray-200);
+
+  // ── 状态色（三件套）───────────────────────────────────────────────────────
+  --inf-color-success:               var(--inf-green-500);
+  --inf-color-on-success:            var(--inf-white);
+  --inf-color-success-light:         var(--inf-green-50);
+
+  --inf-color-warning:               var(--inf-amber-500);
+  --inf-color-on-warning:            var(--inf-white);
+  --inf-color-warning-light:         var(--inf-amber-50);
+
+  --inf-color-error:                 var(--inf-red-500);
+  --inf-color-on-error:              var(--inf-white);
+  --inf-color-error-light:           var(--inf-red-50);
+}
+
+.i-application--dark {
+  // ── 背景层 ────────────────────────────────────────────────────────────────
+  --inf-color-background:            var(--inf-dark-800);
+  --inf-color-surface:               var(--inf-dark-400);
+  --inf-color-on-background:         var(--inf-gray-200);
+  --inf-color-on-surface:            var(--inf-gray-300);
+  --inf-color-on-surface-muted:      var(--inf-neutral-500);
+
+  // ── 文字语义别名 ───────────────────────────────────────────────────────────
+  --inf-color-text-primary:          var(--inf-gray-200);
+  --inf-color-text-secondary:        var(--inf-neutral-500);
+
+  // ── Primary ───────────────────────────────────────────────────────────────
+  --inf-color-primary:               var(--inf-blue-300);
+  --inf-color-on-primary:            var(--inf-dark-900);
+  --inf-color-primary-light:         color-mix(in srgb, var(--inf-blue-300)   12%, transparent);
+
+  // ── Secondary ─────────────────────────────────────────────────────────────
+  --inf-color-secondary:             var(--inf-violet-300);
+  --inf-color-on-secondary:          var(--inf-dark-900);
+  --inf-color-secondary-light:       color-mix(in srgb, var(--inf-violet-300) 12%, transparent);
+
+  // ── Tertiary ──────────────────────────────────────────────────────────────
+  --inf-color-tertiary:              var(--inf-teal-300);
+  --inf-color-on-tertiary:           var(--inf-dark-900);
+  --inf-color-tertiary-light:        color-mix(in srgb, var(--inf-teal-300)   12%, transparent);
+
+  // ── 交互状态 ───────────────────────────────────────────────────────────────
+  --inf-color-hover:   color-mix(in srgb, var(--inf-white)     6%, transparent);
+  --inf-color-press:   color-mix(in srgb, var(--inf-white)    12%, transparent);
+
+  // ── 分割线 ─────────────────────────────────────────────────────────────────
+  --inf-color-border:                var(--inf-gray-700);
+
+  // ── 状态色 ─────────────────────────────────────────────────────────────────
+  --inf-color-success:               var(--inf-green-400);
+  --inf-color-on-success:            var(--inf-dark-900);
+  --inf-color-success-light:         color-mix(in srgb, var(--inf-green-400)  12%, transparent);
+
+  --inf-color-warning:               var(--inf-amber-400);
+  --inf-color-on-warning:            var(--inf-dark-900);
+  --inf-color-warning-light:         color-mix(in srgb, var(--inf-amber-400)  12%, transparent);
+
+  --inf-color-error:                 var(--inf-red-400);
+  --inf-color-on-error:              var(--inf-dark-900);
+  --inf-color-error-light:           color-mix(in srgb, var(--inf-red-400)    12%, transparent);
+}

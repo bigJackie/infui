@@ -1,0 +1,158 @@
+@use '../mixins/layout' as *;
+
+// ── IList ──────────────────────────────────────────────────────────────────
+.i-list {
+  @include flex-col;    // list items 纵向堆叠
+  @include surface;     // 背景 + 文字色来自 surface token
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  border-radius: var(--inf-radius-md);
+}
+
+// ── IListItem ──────────────────────────────────────────────────────────────
+.i-list-item {
+  // 水平居中对齐：prepend / content / append
+  @include flex-row;
+  @include transition(background);
+  list-style: none;
+  padding: 8px 16px;
+  gap: 12px;
+  min-height: 44px;
+
+  // cursor + hover/active
+  &--clickable {
+    @include interactive;
+  }
+
+  &--active {
+    color: var(--inf-color-primary);
+    background: var(--inf-color-primary-light);
+  }
+
+  // disabled 放在 active 之后，确保禁用态覆盖激活色
+  // opacity + pointer-events: none
+  &--disabled {
+    @include disabled;
+  }
+
+  // ── 子区域 ──────────────────────────────────────────────────────────────
+  &__prepend,
+  &__append {
+    // 图标/头像内部居中
+    @include flex-row;
+    // 不参与压缩，保证宽度稳定
+    @include no-shrink;
+    color: var(--inf-color-text-secondary);
+  }
+
+  // flex: 1 + min-width: 0，防止文本溢出容器
+  &__content {
+    @include fill;
+  }
+
+  &__title {
+    display: block;
+    font-size: 14px;
+    line-height: 1.5;
+    // 单行溢出截断
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__subtitle {
+    display: block;
+    font-size: 12px;
+    color: var(--inf-color-text-secondary);
+    line-height: 1.4;
+    margin-top: 2px;
+  }
+}
+
+// ── IListGroup ─────────────────────────────────────────────────────────────
+.i-list-group {
+  list-style: none;
+
+  &__header {
+    @include flex-row;
+    // group header 始终可点击
+    @include interactive;
+    @include transition(background, color);
+    padding: 8px 16px;
+    gap: 12px;
+    min-height: 44px;
+
+    // 展开时标题高亮
+    &--open {
+      color: var(--inf-color-primary);
+    }
+
+    &--disabled {
+      @include disabled;
+    }
+  }
+
+  &__prepend {
+    @include flex-row;
+    @include no-shrink;
+    color: var(--inf-color-text-secondary);
+  }
+
+  &__header-content {
+    // 标题区撑满剩余空间
+    @include fill;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  // 箭头容器：仅做旋转，内容由 slot 决定
+  &__arrow {
+    @include no-shrink;
+    @include transition(transform);
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  // 默认箭头：纯 CSS 三角，替换为图标组件时此元素不渲染
+  &__arrow-icon {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor;
+  }
+
+  // ── 内容区：max-height 过渡 ──────────────────────────────────────────────
+  &__content {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;          // 配合 max-height 隐藏溢出内容
+    max-height: 0;
+    @include transition(max-height); // 使用统一 --inf-transition 变量
+
+    &--open {
+      // 2000px：足够覆盖绝大多数列表高度
+      // 不用 9999px：max-height 过渡时长基于设定值计算，值越大展开越慢
+      max-height: 2000px;
+    }
+
+    // 第一层嵌套缩进
+    .i-list-item,
+    .i-list-group__header {
+      padding-left: 32px;
+    }
+
+    // 第二层嵌套再缩进（多级菜单场景）
+    .i-list-group__content {
+      .i-list-item,
+      .i-list-group__header {
+        padding-left: 48px;
+      }
+    }
+  }
+}

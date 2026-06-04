@@ -1,0 +1,21 @@
+// 1. 原始变量（挂在 :root）
+@use './variables/color' as *;
+@use './variables/layout' as *;
+
+// 2. Reset
+@use './base/reset' as *;
+
+// 3. 组件样式（语义化变量在这里定义并绑定）
+@use './variables/semantic' as *;
+@use './components/application' as *;
+@use './components/container' as *;
+@use './components/header' as *;
+@use './components/footer' as *;
+@use './components/aside' as *;
+@use './components/main' as *;
+@use './components/list' as *;
+@use './components/icon' as *;
+@use './components/button' as *;
+
+// 4. 混合宏（工具类）
+@forward './mixins';

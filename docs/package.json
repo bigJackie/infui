@@ -1,0 +1,28 @@
+{
+  "name": "@infui/docs",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Documentation and examples for InfUI, a Vue 3 component library.",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.100.0",
+    "shiki": "^4.2.0",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.35"
+  },
+  "dependencies": {
+    "@infui/theme": "workspace:*",
+    "@phosphor-icons/vue": "^2.2.1",
+    "inf-css": "^0.0.2",
+    "inf-ui": "workspace:*"
+  }
+}

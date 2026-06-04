@@ -1,0 +1,181 @@
+@use '../mixins/layout' as *;
+
+// ── CSS 自定义属性方案 ─────────────────────────────────────────────────────────
+// color 修饰类定义 --_c（主色）--_c-on（前景色）--_c-light（浅色）
+// variant 修饰类消费这三个变量
+// 新增颜色只需加一个 class，不需要重写所有 variant 样式
+
+// ── Color 修饰类 ───────────────────────────────────────────────────────────────
+.i-btn--default {
+  --_c:       var(--inf-color-text-primary);
+  --_c-on:    #fff;
+  --_c-light: var(--inf-color-hover);
+}
+
+.i-btn--primary {
+  --_c:       var(--inf-color-primary);
+  --_c-on:    #fff;
+  --_c-light: var(--inf-color-primary-light);
+}
+.i-btn--success {
+  --_c:       var(--inf-green-500);
+  --_c-on:    #fff;
+  --_c-light: var(--inf-green-50);
+}
+.i-btn--warning {
+  --_c:       var(--inf-orange-500);
+  --_c-on:    #fff;
+  --_c-light: var(--inf-orange-50);
+}
+.i-btn--error {
+  --_c:       var(--inf-red-500);
+  --_c-on:    #fff;
+  --_c-light: var(--inf-red-50);
+}
+.i-btn--info {
+  --_c:       var(--inf-blue-500);
+  --_c-on:    #fff;
+  --_c-light: var(--inf-blue-50);
+}
+
+// ── 基础样式 ───────────────────────────────────────────────────────────────────
+// _button.scss 修改 .i-btn 基础样式
+.i-btn {
+  @include flex-row;
+  @include no-shrink;
+  @include transition(background, color, border-color, opacity, filter);
+  justify-content: center;
+
+  position: relative;
+  gap: 6px;
+  border: 1px solid transparent;
+  border-radius: var(--inf-radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+
+  // ── Size ──────────────────────────────────────────────────────────────────
+  &--sm { height: 28px; padding: 0 10px; font-size: 12px; }
+  &--md { height: 36px; padding: 0 16px; }
+  &--lg { height: 44px; padding: 0 20px; font-size: 15px; }
+
+  // ── Block ─────────────────────────────────────────────────────────────────
+  &--block { width: 100%; justify-content: center; }
+
+  // ── Icon only：宽度 = 高度，去除左右 padding ──────────────────────────────
+  &--icon-only {
+    &.i-btn--sm { width: 28px; padding: 0; }
+    &.i-btn--md { width: 36px; padding: 0; }
+    &.i-btn--lg { width: 44px; padding: 0; }
+    justify-content: center;
+  }
+
+  // ── Disabled ──────────────────────────────────────────────────────────────
+  &--disabled {
+    @include disabled;
+  }
+
+  // ── Variant ───────────────────────────────────────────────────────────────
+
+  // filled：实色背景
+  &--filled {
+    background: var(--_c);
+    color: var(--_c-on);
+    border-color: var(--_c);
+
+    &:hover:not(.i-btn--disabled)  { filter: brightness(0.92); }
+    &:active:not(.i-btn--disabled) { filter: brightness(0.84); }
+  }
+
+  // outlined：描边
+  &--outlined {
+    background: transparent;
+    color: var(--_c);
+    border-color: var(--_c);
+
+    &:hover:not(.i-btn--disabled)  { background: color-mix(in srgb, var(--_c) 8%, transparent); }
+    &:active:not(.i-btn--disabled) { background: color-mix(in srgb, var(--_c) 16%, transparent); }
+  }
+
+  // text：无背景无边框
+  &--text {
+    background: transparent;
+    color: var(--_c);
+    border-color: transparent;
+
+    &:hover:not(.i-btn--disabled)  { background: color-mix(in srgb, var(--_c) 8%, transparent); }
+    &:active:not(.i-btn--disabled) { background: color-mix(in srgb, var(--_c) 16%, transparent); }
+  }
+
+  // tonal：浅色背景（Material You 风格）
+  &--tonal {
+    background: var(--_c-light);
+    color: var(--_c);
+    border-color: transparent;
+
+    &:hover:not(.i-btn--disabled)  { filter: brightness(0.95); }
+    &:active:not(.i-btn--disabled) { filter: brightness(0.90); }
+  }
+
+  // rounded：胶囊形实色，和 filled 视觉相同但圆角拉满
+  &--rounded {
+    background:   var(--_c);
+    color:        var(--_c-on);
+    border-color: var(--_c);
+    border-radius: 9999px;
+
+    // size 下 padding 更宽，视觉更舒展
+    &.i-btn--sm { padding: 0 14px; }
+    &.i-btn--md { padding: 0 20px; }
+    &.i-btn--lg { padding: 0 26px; }
+
+    &:hover:not(.i-btn--disabled)  { filter: brightness(0.92); }
+    &:active:not(.i-btn--disabled) { filter: brightness(0.84); }
+  }
+
+  // 无背景无边框无 hover/active，纯文字色
+  &--plain {
+    background: transparent;
+    color: var(--inf-color-text-primary);
+    border-color: transparent;
+    padding: 0;
+  }
+
+
+  // ── 子元素 ─────────────────────────────────────────────────────────────────
+  &__prepend,
+  &__append {
+    @include flex-row;
+    @include no-shrink;
+  }
+
+  &__content {
+    @include flex-row;
+  }
+
+  // ── Loading Spinner ────────────────────────────────────────────────────────
+  &__spinner {
+    @include no-shrink;
+    width: 14px;
+    height: 14px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: i-btn-spin 0.6s linear infinite;
+  }
+
+  &--loading {
+    // loading 时内容区透明，spinner 顶替位置
+    .i-btn__content { opacity: 0.6; }
+  }
+}
+
+@keyframes i-btn-spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,9 @@
+@use '../mixins' as *;
+
+.i-application {
+  @include flex-col;
+  @include background;
+  @include transition(background-color, color);
+  height: 100vh;
+  overflow: hidden;
+}

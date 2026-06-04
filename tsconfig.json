@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "types": ["node", "vite/client", "vitest/globals"],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+
+    /* Temp deprecated */
+    "ignoreDeprecations": "6.0",
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@infui/components": ["./packages/components/src/index.ts"],
+      "@infui/theme": ["./packages/theme/src/index.scss"],
+      "inf-ui": ["./packages/infui/src/index.ts"]
+    }
+  },
+  "include": ["docs/**/*.ts", "docs/**/*.vue", "docs/components.d.ts"],
+  "exclude": ["**/dist/**", "**/node_modules/**"]
+}

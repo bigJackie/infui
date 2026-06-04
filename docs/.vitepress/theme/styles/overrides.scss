@@ -1,0 +1,17 @@
+.VPLocalSearchBox {
+  z-index: var(--inf-z-modal) !important;
+}
+
+.shiki,
+.shiki span {
+  background-color: var(--shiki-light-bg) !important;
+}
+
+// 同时覆盖 html.dark（VitePress）和 [data-theme='dark']（IApp）
+html.dark,
+[data-theme='dark'] {
+  .shiki,
+  .shiki span {
+    color: var(--shiki-dark) !important;
+  }
+}

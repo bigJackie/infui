@@ -1,0 +1,41 @@
+{
+  "name": "@jackiew/infui",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Infui is a Vue 3 UI framework based on Infcss, providing a set of high-quality, customizable components and utilities to help developers build modern web applications with ease.",
+  "scripts": {
+    "docs:dev": "pnpm -C docs run dev",
+    "docs:build": "pnpm -C docs run build",
+    "docs:preview": "pnpm -C docs run preview",
+    "clean": "rimraf --glob **/node_modules packages/*/dist",
+    "build": "rimraf packages/*/dist --glob && pnpm -r --filter=./packages/* run build",
+    "preview": "vite preview",
+    "lint": "npx prettier --write . && npx eslint --fix .",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "inf-ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "@vue/test-utils": "^2.4.10",
+    "happy-dom": "^20.9.0",
+    "prettier": "^3.8.3",
+    "rimraf": "^6.1.3",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14",
+    "vitest": "^4.1.7",
+    "vue": "^3.5.35"
+  },
+  "keywords": [
+    "ui",
+    "framework",
+    "infui",
+    "vue",
+    "vue3"
+  ],
+  "author": "JackieWong",
+  "license": "MIT"
+}

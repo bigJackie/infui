@@ -1,0 +1,7 @@
+@use '../mixins' as *;
+
+.i-main {
+  @include fill;
+  @include background;
+  overflow-y: auto;
+}
