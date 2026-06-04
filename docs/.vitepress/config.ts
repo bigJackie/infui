@@ -7,9 +7,9 @@ export default defineConfig(({ command }) => {
   return {
     title: 'Infinity UI',
     description: 'Personal UI framework for Vue 3',
+    base: command === 'build' ? '/projects/infui/' : '/',
 
     vite: {
-      base: command === 'build' ? '/projects/infui/' : '/',
       plugins: [InfCSSVite(), demoPlugin()],
       resolve: {
         alias: {
