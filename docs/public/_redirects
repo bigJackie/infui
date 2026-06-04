@@ -1,0 +1,5 @@
+# Cloudflare 子路径代理兼容：/projects/infui/* → /*
+/projects/infui/*  /:splat  200
+
+# SPA fallback：所有未匹配路由返回 index.html（VitePress SSG 一般不需要，保留备用）
+/*  /index.html  200
