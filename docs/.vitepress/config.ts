@@ -3,11 +3,12 @@ import InfCSSVite from 'inf-css/vite'
 import { resolve } from 'node:path'
 import { demoPlugin } from './plugins/demo'
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   title: 'Infinity UI',
   description: 'Personal UI framework for Vue 3',
 
   vite: {
+    base: command === 'build' ? '/projects/infcss/' : '/',
     plugins: [InfCSSVite(), demoPlugin()],
     resolve: {
       alias: {
@@ -86,4 +87,4 @@ export default defineConfig({
       ],
     },
   },
-})
+}))
