@@ -211,7 +211,7 @@ const features = [
     border-radius: var(--inf-radius-md);
     background: var(--inf-color-surface);
     border: 1px solid var(--inf-color-border);
-    font-family: var(--vp-font-family-mono, monospace);
+    font-family: var(--vp-font-family-mono, monospace), serif;
     font-size: 13px;
   }
 
@@ -259,7 +259,7 @@ const features = [
   &__code {
     margin: 0;
     padding: 20px 24px;
-    font-family: var(--vp-font-family-mono, monospace);
+    font-family: var(--vp-font-family-mono, monospace), serif;
     font-size: 13px;
     line-height: 1.8;
     color: #cdd6f4;
