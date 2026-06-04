@@ -8,7 +8,7 @@ export default defineConfig(({ command }) => ({
   description: 'Personal UI framework for Vue 3',
 
   vite: {
-    base: command === 'build' ? '/projects/infcss/' : '/',
+    base: command === 'build' ? '/projects/infui/' : '/',
     plugins: [InfCSSVite(), demoPlugin()],
     resolve: {
       alias: {
