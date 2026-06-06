@@ -12,19 +12,23 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./style": "./dist/style.css"
+    "./style": {
+      "types": "./dist/style.d.ts",
+      "default": "./dist/style.css"
+    }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsup && cp ../theme/src/style.d.ts dist/style.d.ts"
   },
   "dependencies": {
     "@inf-ui/components": "workspace:*",
     "@inf-ui/theme": "workspace:*"
   },
   "peerDependencies": {
+    "@phosphor-icons/vue": "^2.2.1",
     "vue": "^3.5.35"
   },
   "devDependencies": {

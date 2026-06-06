@@ -1,5 +1,6 @@
 import { computed } from 'vue'
 import type { ComputedRef, Ref } from 'vue'
+import { toUnit } from '../../shared'
 
 export function useAsideStyle(
   isMini: Ref<boolean>,
@@ -13,7 +14,7 @@ export function useAsideStyle(
   ])
 
   const styles = computed(() => ({
-    '--i-aside-width': `${currentWidth.value}px`,
+    '--i-aside-width': toUnit(currentWidth.value),
   }))
 
   return { classes, styles }
