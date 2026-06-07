@@ -1,0 +1,111 @@
+@use '../mixins' as *;
+
+.i-tabs {
+  @include flex-row;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid var(--inf-color-border);
+
+  &--block {
+    width: 100%;
+  }
+
+  &__scroller {
+    @include flex-row;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &--scrollable {
+    .i-tabs__scroller {
+      overflow-x: auto;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .i-tabs__tab {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+  }
+
+  &__scroll-btn {
+    @include transition(color, background-color, border-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--inf-color-border);
+    border-radius: var(--inf-radius-sm);
+    background: var(--inf-color-surface);
+    color: var(--inf-color-text-secondary);
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background: var(--inf-color-hover);
+      color: var(--inf-color-text-primary);
+    }
+
+    &:disabled {
+      @include disabled;
+    }
+  }
+
+  &__tab {
+    @include transition(color, border-color, background-color);
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: var(--inf-color-text-secondary);
+    padding: 10px 12px;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      color: var(--inf-color-text-primary);
+      background: var(--inf-color-hover);
+    }
+
+    &--active {
+      color: var(--inf-color-primary);
+      border-bottom-color: var(--inf-color-primary);
+    }
+
+    &--disabled {
+      @include disabled;
+    }
+  }
+
+  &--disabled {
+    @include disabled;
+  }
+}
+
+.i-tab-panels {
+  padding-top: 12px;
+
+  &--block {
+    width: 100%;
+  }
+
+  &__panel {
+    line-height: 1.6;
+  }
+}
+
+.i-tab-panel-fade-enter-active,
+.i-tab-panel-fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.i-tab-panel-fade-enter-from,
+.i-tab-panel-fade-leave-to {
+  opacity: 0;
+}
+
+

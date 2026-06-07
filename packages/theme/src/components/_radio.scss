@@ -1,0 +1,56 @@
+@use '../mixins' as *;
+
+.i-radio {
+  --i-radio-color: var(--inf-color-primary);
+  @include flex-row;
+      &--primary { --i-radio-color: var(--inf-color-primary); }
+      &--success { --i-radio-color: var(--inf-color-success); }
+      &--warning { --i-radio-color: var(--inf-color-warning); }
+      &--error { --i-radio-color: var(--inf-color-error); }
+      &--info { --i-radio-color: var(--inf-blue-500); }
+
+  gap: 8px;
+  cursor: pointer;
+
+  &--block {
+    width: 100%;
+  }
+
+  &__native {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__mark {
+    @include no-shrink;
+    @include transition(border-color);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid var(--inf-color-border);
+    position: relative;
+  }
+
+  &--checked .i-radio__mark {
+    border-color: var(--i-radio-color);
+  }
+
+  &--checked .i-radio__mark::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: var(--i-radio-color);
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  &--disabled {
+    @include disabled;
+  }
+}
+

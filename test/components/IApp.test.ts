@@ -27,4 +27,10 @@ describe('IApp', () => {
     const wrapper = mount(IApp)
     expect(wrapper.classes()).toContain('i-application')
   })
+
+  it('不写入 documentElement 的 data-theme（多实例隔离）', () => {
+    document.documentElement.removeAttribute('data-theme')
+    mount(IApp, { props: { theme: 'dark' } })
+    expect(document.documentElement.getAttribute('data-theme')).toBeNull()
+  })
 })

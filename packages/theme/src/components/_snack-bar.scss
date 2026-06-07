@@ -1,0 +1,55 @@
+@use '../mixins' as *;
+
+.i-snack-bar {
+  @include flex-row;
+  @include transition(opacity, transform);
+  position: fixed;
+  gap: 10px;
+  min-width: 260px;
+  max-width: min(560px, calc(100vw - 24px));
+  border-radius: var(--inf-radius-md);
+  box-shadow: var(--inf-shadow-lg);
+  padding: 10px 12px;
+  background: var(--inf-color-text-primary);
+  color: #fff;
+  z-index: calc(var(--inf-z-header) + 10);
+
+  &--block {
+    width: calc(100vw - 24px);
+  }
+
+  &--top-left { top: calc(12px + var(--i-snack-bar-offset, 0px)); left: 12px; }
+  &--top-center { top: calc(12px + var(--i-snack-bar-offset, 0px)); left: 50%; transform: translateX(-50%); }
+  &--top-right { top: calc(12px + var(--i-snack-bar-offset, 0px)); right: 12px; }
+  &--bottom-left { bottom: calc(12px + var(--i-snack-bar-offset, 0px)); left: 12px; }
+  &--bottom-center { bottom: calc(12px + var(--i-snack-bar-offset, 0px)); left: 50%; transform: translateX(-50%); }
+  &--bottom-right { bottom: calc(12px + var(--i-snack-bar-offset, 0px)); right: 12px; }
+
+  &--success { background: var(--inf-green-600); }
+  &--warning { background: var(--inf-orange-600); }
+  &--error { background: var(--inf-red-600); }
+  &--info { background: var(--inf-blue-600); }
+
+  &__content {
+    @include fill;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  &__action,
+  &__close {
+    @include transition(background-color);
+    border: 0;
+    border-radius: var(--inf-radius-sm);
+    background: transparent;
+    color: inherit;
+    padding: 4px 8px;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+  }
+}
+
+

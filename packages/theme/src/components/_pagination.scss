@@ -1,0 +1,45 @@
+@use '../mixins' as *;
+
+.i-pagination {
+  @include flex-row;
+  gap: 6px;
+
+  &--block {
+    width: 100%;
+  }
+
+  &__nav,
+  &__page {
+    @include transition(background-color, border-color, color);
+    min-width: 32px;
+    height: 32px;
+    border: 1px solid var(--inf-color-border);
+    border-radius: var(--inf-radius-sm);
+    background: var(--inf-color-surface);
+    color: inherit;
+    cursor: pointer;
+    padding: 0 8px;
+
+    &:hover:not(:disabled) {
+      background: var(--inf-color-hover);
+    }
+  }
+
+  &__page--active {
+    border-color: var(--inf-color-primary);
+    color: var(--inf-color-primary);
+    background: color-mix(in srgb, var(--inf-color-primary) 12%, transparent);
+  }
+
+  &__meta {
+    @include no-shrink;
+    font-size: 12px;
+    color: var(--inf-color-text-secondary);
+    padding: 0 6px;
+  }
+
+  &--disabled {
+    @include disabled;
+  }
+}
+

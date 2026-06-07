@@ -24,6 +24,7 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "@inf-ui/components": ["./packages/components/src/index.ts"],
+      "@inf-ui/composables": ["./packages/composables/index.ts"],
       "@inf-ui/theme": ["./packages/theme/src/index.scss"],
       "@jackiew/inf-ui": ["./packages/infui/src/index.ts"]
     }

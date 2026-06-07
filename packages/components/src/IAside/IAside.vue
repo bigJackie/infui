@@ -9,6 +9,7 @@ const props = withDefaults(defineProps<UseAsideOptions>(), {
   miniWidth: 64,
   mini: false,
   float: false,
+  right: false,
 })
 
 const emit = defineEmits<{
@@ -18,8 +19,8 @@ const emit = defineEmits<{
 
 const slots = useSlots()
 
-const { float, isMini, currentWidth, toggle, open, close } = useAside(props)
-const { classes, styles } = useAsideStyle(isMini, currentWidth, float)
+const { isMini, currentWidth, toggle, open, close } = useAside(props)
+const { classes, styles } = useAsideStyle(props, isMini, currentWidth)
 
 // isMini 变化时通知外部
 watch(isMini, val => {

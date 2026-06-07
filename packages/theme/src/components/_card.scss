@@ -1,0 +1,55 @@
+@use '../mixins' as *;
+
+.i-card {
+  @include surface;
+  @include flex-col;
+  border: 1px solid var(--inf-color-border);
+  border-radius: var(--inf-radius-md);
+  overflow: hidden;
+
+  &--block {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--outlined {
+    border-color: var(--inf-color-primary);
+  }
+
+  &--elevated {
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--inf-color-text-primary) 14%, transparent);
+  }
+
+  &__header,
+  &__content,
+  &__footer {
+    padding: 12px 14px;
+  }
+
+  &__header {
+    border-bottom: 1px solid var(--inf-color-border);
+  }
+
+  &__content {
+    @include fill;
+    line-height: 1.6;
+  }
+
+  &__footer {
+    border-top: 1px solid var(--inf-color-border);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--inf-color-text-primary);
+  }
+
+  &__subtitle {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--inf-color-text-secondary);
+  }
+}
+

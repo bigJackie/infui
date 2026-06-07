@@ -1,0 +1,55 @@
+@use '../mixins' as *;
+
+.i-expansion-panel {
+  @include flex-col;
+  gap: 10px;
+
+  &--block {
+    width: 100%;
+  }
+
+  &__card {
+    overflow: hidden;
+  }
+
+  &__header {
+    @include flex-row;
+    @include transition(background-color);
+    justify-content: space-between;
+    width: 100%;
+    border: 0;
+    background: var(--inf-color-surface);
+    padding: 12px 14px;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background: var(--inf-color-hover);
+    }
+  }
+
+  &__item--open {
+    .i-expansion-panel__arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__arrow {
+    @include transition(transform);
+  }
+
+  &__content {
+    padding: 12px 14px;
+    color: var(--inf-color-text-secondary);
+    line-height: 1.6;
+    background: color-mix(in srgb, var(--inf-color-surface) 92%, var(--inf-color-hover));
+  }
+
+  &__item--disabled {
+    @include disabled;
+  }
+
+  &--disabled {
+    @include disabled;
+  }
+}
+

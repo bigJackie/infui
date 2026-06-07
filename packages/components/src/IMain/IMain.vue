@@ -4,6 +4,8 @@ import { useMainStyle } from './useMainStyle'
 
 const { mainRef } = useMain()
 const { classes } = useMainStyle()
+
+defineExpose({ el: mainRef })
 </script>
 
 <template>

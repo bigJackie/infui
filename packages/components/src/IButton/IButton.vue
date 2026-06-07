@@ -7,6 +7,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   color: 'primary',
   size: 'md',
   tag: 'button',
+  type: 'button',
 })
 
 const emit = defineEmits<{
@@ -22,6 +23,7 @@ const { classes, styles } = useButtonStyle(props, () => isDisabled.value)
     :is="tag"
     :class="classes"
     :style="styles"
+    :type="tag === 'button' ? type : undefined"
     :disabled="tag === 'button' ? isDisabled : undefined"
     :aria-disabled="isDisabled || undefined"
     :aria-busy="loading || undefined"
@@ -35,7 +37,7 @@ const { classes, styles } = useButtonStyle(props, () => isDisabled.value)
 
     <!-- 主内容，iconOnly 时 slot 应放图标 -->
     <span class="i-btn__content">
-      <slot />
+      <slot>{{ props.label ?? props.text }}</slot>
     </span>
 
     <span v-if="$slots.append" class="i-btn__append">

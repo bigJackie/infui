@@ -1,0 +1,21 @@
+@use '../mixins' as *;
+
+.i-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__scrim {
+    position: absolute;
+    inset: 0;
+    background: var(--inf-color-overlay-scrim, rgba(15, 23, 42, 0.52));
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+}
+

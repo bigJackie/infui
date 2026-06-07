@@ -5,6 +5,8 @@ export type ButtonColor = 'default' | 'primary' | 'success' | 'warning' | 'error
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
 export interface ButtonProps {
+  text?: string
+  label?: string
   variant?: ButtonVariant // 按钮的整体风格
   color?: ButtonColor // 按钮的颜色主题
   size?: ButtonSize // 按钮的尺寸
@@ -14,6 +16,7 @@ export interface ButtonProps {
   /** 仅含图标时传 true，按钮变为正方形 */
   iconOnly?: boolean
   tag?: string
+  type?: 'button' | 'submit' | 'reset'
   width?: string | number
   height?: string | number
 }

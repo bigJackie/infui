@@ -1,10 +1,9 @@
 export * from '@inf-ui/components'
 export { useGlobalConfig } from './global.ts'
-export * from '../../composables'
+export * from '@inf-ui/composables'
 
 import type { App } from 'vue'
 import * as components from '@inf-ui/components'
-export * from '@inf-ui/components'
 
 // 全局注册插件：app.use(InfUI)
 export const InfUI = {

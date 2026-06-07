@@ -1,0 +1,71 @@
+@use '../mixins' as *;
+
+.i-menu {
+  position: relative;
+  display: inline-flex;
+
+  &--block {
+    display: flex;
+    width: 100%;
+  }
+
+  &__activator {
+    width: 100%;
+  }
+
+  &__content {
+    position: fixed;
+    top: var(--i-menu-top, 0px);
+    left: var(--i-menu-left, 0px);
+    min-width: 180px;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    border: 1px solid var(--inf-color-border);
+    border-radius: var(--inf-radius-md);
+    background: var(--inf-color-surface);
+    box-shadow: var(--inf-shadow-lg);
+    z-index: var(--inf-z-header);
+
+    li {
+      list-style: none;
+    }
+  }
+
+  &--up {
+    .i-menu__content {
+      top: var(--i-menu-top, 0px);
+    }
+  }
+
+  &__item {
+    @include transition(background-color, color);
+    width: 100%;
+    text-align: left;
+    border: 0;
+    border-radius: var(--inf-radius-sm);
+    background: transparent;
+    color: inherit;
+    padding: 8px 10px;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background: var(--inf-color-hover);
+    }
+
+    &--active {
+      color: var(--inf-color-primary);
+      background: color-mix(in srgb, var(--inf-color-primary) 12%, transparent);
+    }
+
+    &--disabled {
+      @include disabled;
+    }
+  }
+
+  &--disabled {
+    @include disabled;
+  }
+}
+
+

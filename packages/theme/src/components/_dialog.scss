@@ -1,0 +1,61 @@
+@use '../mixins' as *;
+
+.i-dialog {
+  @include surface;
+  @include flex-col;
+  border-radius: var(--inf-radius-lg);
+  box-shadow: var(--inf-shadow-lg);
+  overflow: hidden;
+  min-width: min(280px, calc(100vw - 32px));
+
+  &__header {
+    @include flex-row;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px 8px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  &__close {
+    @include transition(background-color);
+    width: 28px;
+    height: 28px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--inf-color-hover);
+    }
+
+    &:active {
+      background: var(--inf-color-press);
+    }
+  }
+
+  &__body {
+    padding: 12px 20px 20px;
+  }
+
+  &__text {
+    margin: 0;
+    color: var(--inf-color-text-secondary);
+    line-height: 1.6;
+  }
+
+  &__actions {
+    @include flex-row;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 0 20px 16px;
+  }
+}
+

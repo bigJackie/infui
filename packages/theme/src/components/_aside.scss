@@ -11,6 +11,10 @@
   overflow: hidden;
   z-index: var(--inf-z-sidebar);
 
+  &--mini {
+    border: none;
+  }
+
   &--float {
     position: fixed;
     top: var(--i-header-height, 64px);
@@ -20,9 +24,19 @@
     z-index: var(--inf-z-modal);
     box-shadow: var(--inf-shadow-lg);
 
+    &__right {
+      left: auto;
+      right: 0;
+    }
+
     &.i-aside--mini {
       transform: translateX(-100%);
       box-shadow: none;
+
+      &__right {
+        transform: translateX(100%);
+        box-shadow: none;
+      }
     }
   }
 

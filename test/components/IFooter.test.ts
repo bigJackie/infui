@@ -47,9 +47,9 @@ describe('IFooter', () => {
     expect(wrapper.find('.i-footer').classes()).toContain('i-footer--fixed')
   })
 
-  it('fixed 时注入 --i-footer-height 到 :root', async () => {
-    wrap({ fixed: true, height: 48 })
-    expect(document.documentElement.style.getPropertyValue('--i-footer-height')).toBe('48px')
+  it('fixed 时仅注入组件级 --i-footer-height', async () => {
+    const wrapper = wrap({ fixed: true, height: 48 })
+    expect(wrapper.find('.i-footer').attributes('style')).toContain('--i-footer-height: 48px')
   })
 
   it('非 fixed 时不注入 :root CSS 变量', () => {
@@ -58,7 +58,13 @@ describe('IFooter', () => {
     expect(document.documentElement.style.getPropertyValue('--i-footer-height')).toBe('')
   })
 
-  it('卸载时移除 :root CSS 变量', () => {
+  it('fixed 时也不污染 :root CSS 变量', () => {
+    document.documentElement.style.removeProperty('--i-footer-height')
+    wrap({ fixed: true })
+    expect(document.documentElement.style.getPropertyValue('--i-footer-height')).toBe('')
+  })
+
+  it('卸载时不影响 :root CSS 变量', () => {
     const wrapper = wrap({ fixed: true })
     wrapper.unmount()
     expect(document.documentElement.style.getPropertyValue('--i-footer-height')).toBe('')

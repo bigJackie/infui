@@ -78,7 +78,7 @@ const features = [
   <span class="ct">&lt;IApp&gt;</span>
     <span class="ct">&lt;IHeader&gt;</span>
       <span class="ct">&lt;IButton</span> <span class="ca">variant</span>=<span class="cv">"filled"</span><span class="ct">&gt;</span>
-        <span class="cs">Hello Infinity UI</span>
+        <span class="cs">Hello Infinite UI</span>
       <span class="ct">&lt;/IButton&gt;</span>
     <span class="ct">&lt;/IHeader&gt;</span>
     <span class="ct">&lt;IContainer</span> <span class="ca">app</span><span class="ct">&gt;</span>

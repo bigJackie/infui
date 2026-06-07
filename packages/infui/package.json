@@ -24,6 +24,7 @@
     "build": "tsup && cp ../theme/src/style.d.ts dist/style.d.ts"
   },
   "dependencies": {
+    "@inf-ui/composables": "workspace:*",
     "@inf-ui/components": "workspace:*",
     "@inf-ui/theme": "workspace:*"
   },

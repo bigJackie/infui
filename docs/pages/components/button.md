@@ -6,7 +6,9 @@ title: 按钮
 
 `IButton` 是最基础的交互组件，支持五种视觉变体、五种语义颜色、三种尺寸及加载状态。
 
-## 变体
+## 示例
+
+### 变体
 
 五种视觉变体覆盖不同强调层级。
 
@@ -14,7 +16,7 @@ title: 按钮
 components/button/variant
 :::
 
-## 颜色
+### 颜色
 
 `color` 属性支持五种语义颜色，可与任意变体组合。
 
@@ -22,13 +24,13 @@ components/button/variant
 components/button/color
 :::
 
-## 尺寸
+### 尺寸
 
 :::demo
 components/button/size
 :::
 
-## 图标
+### 图标
 
 通过 `prepend` / `append` 插槽在按钮两侧插入图标。
 
@@ -36,7 +38,7 @@ components/button/size
 components/button/slot
 :::
 
-## 图标按钮
+### 图标按钮
 
 `icon-only` 让按钮变为正方形，适合纯图标场景；`rounded` + `icon-only` 可实现 FAB 风格。
 
@@ -44,7 +46,7 @@ components/button/slot
 components/button/icon-only
 :::
 
-## 加载中
+### 加载中
 
 `loading` 为 `true` 时展示 spinner，同时阻断点击事件。
 
@@ -52,13 +54,13 @@ components/button/icon-only
 components/button/loading
 :::
 
-## 禁用
+### 禁用
 
 :::demo
 components/button/disabled
 :::
 
-## 块级
+### 块级
 
 `block` 让按钮撑满父容器宽度。
 

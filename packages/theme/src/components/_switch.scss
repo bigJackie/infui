@@ -1,0 +1,55 @@
+@use '../mixins' as *;
+
+.i-switch {
+  @include flex-row;
+  gap: 8px;
+  cursor: pointer;
+
+  &--block {
+    width: 100%;
+  }
+
+  &__native {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__track {
+    @include no-shrink;
+    @include transition(background-color);
+    width: 36px;
+    height: 20px;
+    border-radius: 9999px;
+    background: var(--inf-color-border);
+    padding: 2px;
+  }
+
+  &__thumb {
+    @include transition(transform);
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
+  &--checked .i-switch__track {
+    background: var(--inf-color-primary);
+  }
+
+  &--checked .i-switch__thumb {
+    transform: translateX(16px);
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  &--disabled {
+    @include disabled;
+  }
+}
+

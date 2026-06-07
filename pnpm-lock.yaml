@@ -93,14 +93,30 @@ importers:
         specifier: ^7.2.0
         version: 7.2.0(@types/node@25.9.1)(esbuild@0.27.7)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.100.0)(vue@3.5.35(typescript@6.0.3))
 
+  packages/composables:
+    dependencies:
+      vue:
+        specifier: ^3.5.35
+        version: 3.5.35(typescript@6.0.3)
+    devDependencies:
+      tsup:
+        specifier: ^8.5.1
+        version: 8.5.1(jiti@2.7.0)(postcss@8.5.15)(typescript@6.0.3)
+
   packages/infui:
     dependencies:
       '@inf-ui/components':
         specifier: workspace:*
         version: link:../components
+      '@inf-ui/composables':
+        specifier: workspace:*
+        version: link:../composables
       '@inf-ui/theme':
         specifier: workspace:*
         version: link:../theme
+      '@phosphor-icons/vue':
+        specifier: ^2.2.1
+        version: 2.2.1(vue@3.5.35(typescript@6.0.3))
       vue:
         specifier: ^3.5.35
         version: 3.5.35(typescript@6.0.3)

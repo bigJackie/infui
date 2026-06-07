@@ -1,0 +1,64 @@
+@use '../mixins' as *;
+
+.i-input {
+  @include flex-col;
+  gap: 6px;
+  width: 260px;
+
+  &--block {
+    width: 100%;
+  }
+
+  &__label {
+    font-size: 12px;
+    color: var(--inf-color-text-secondary);
+  }
+
+  &__control {
+    @include flex-row;
+    @include transition(border-color, box-shadow, background-color);
+    border: 1px solid var(--inf-color-border);
+    border-radius: var(--inf-radius-md);
+    background: var(--inf-color-surface);
+    padding: 0 10px;
+    min-height: 36px;
+
+    &:focus-within {
+      border-color: var(--inf-color-primary);
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--inf-color-primary) 20%, transparent);
+    }
+  }
+
+  &__native {
+    @include fill;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    height: 100%;
+    font-size: 14px;
+  }
+
+  &__clear {
+    @include transition(background-color);
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--inf-color-text-secondary);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--inf-color-hover);
+    }
+  }
+
+  &--disabled {
+    .i-input__control {
+      @include disabled;
+      background: var(--inf-color-hover);
+    }
+  }
+}
+

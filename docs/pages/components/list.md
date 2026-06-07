@@ -36,7 +36,7 @@ components/list/subtitle
 components/list/prepend-append
 :::
 
-## 单选
+### 单选
 
 传入 `v-model` 开启选中模式，`mandatory` 保证始终有一项被选中。
 
@@ -44,7 +44,7 @@ components/list/prepend-append
 components/list/selection
 :::
 
-## 多选
+### 多选
 
 添加 `multiple` prop 切换为多选模式，`mandatory` 时至少保留一项选中。
 
@@ -52,7 +52,7 @@ components/list/selection
 components/list/multiple
 :::
 
-## 嵌套列表
+### 嵌套列表
 
 `IListGroup` 支持多级嵌套，配合 `single-group` 可限制同级只展开一个分组。
 
@@ -60,7 +60,7 @@ components/list/multiple
 components/list/nested
 :::
 
-## 手风琴（singleGroup）
+### 手风琴（singleGroup）
 
 `single-group` 控制同级 `IListGroup` 互斥展开；`independent` 让某个分组脱离协调，始终独立控制。
 
@@ -68,7 +68,7 @@ components/list/nested
 components/list/single-group
 :::
 
-## 禁用状态
+### 禁用状态
 
 支持 item 级别和 group 级别的禁用。
 

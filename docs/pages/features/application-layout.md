@@ -56,7 +56,7 @@ components/application/layout_mobile
 ### Footer Fixed 变体
 以上所有布局的 Footer 均支持 fixed 属性，固定在视口底部：
 ```vue
-<IFooter fixed>© 2026 Infinity UI</IFooter>
+<IFooter fixed>© 2026 Infinite UI</IFooter>
 ```
 
 ## 应用布局 API
@@ -100,12 +100,13 @@ components/application/layout_mobile
 
 ### IAside 属性
 
-| 属性名       | 类型        | 默认值     | 说明                 |
-|-----------|-----------|---------|--------------------|
-| width     | `number`  | `256`   | 展开时侧边栏宽度（px）       |
-| miniWidth | `number`  | `64`    | 收起时侧边栏宽度（px）       |
-| mini      | `boolean` | `false` | 是否初始为收起状态          |
-| float     | `boolean` | `false` | 浮层模式，不占据文档流，常用于移动端 |
+| 属性名       | 类型                 | 默认值     | 说明                 |
+|-----------|--------------------|---------|--------------------|
+| width     | `string \| number` | `256`   | 展开时侧边栏宽度（px）       |
+| miniWidth | `string \| number` | `64`    | 收起时侧边栏宽度（px）       |
+| mini      | `boolean`          | `false` | 是否初始为收起状态          |
+| float     | `boolean`          | `false` | 浮层模式，不占据文档流，常用于移动端 |
+| right     | `boolean`          | `false` | 浮层模式是否为右侧          |
 
 ### IAside 插槽
 

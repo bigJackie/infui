@@ -2,16 +2,19 @@ import { computed, ref, watch } from 'vue'
 import type { ComputedRef, Ref } from 'vue'
 
 export interface UseAsideOptions {
-  width?: number
-  miniWidth?: number
+  block?: boolean
+  width?: string | number
+  miniWidth?: string | number
   mini?: boolean
   float?: boolean
+  right?: boolean
 }
 
 export function useAside(options: UseAsideOptions = {}) {
-  const width: ComputedRef<number> = computed(() => options.width ?? 256)
-  const miniWidth: ComputedRef<number> = computed(() => options.miniWidth ?? 64)
+  const width: ComputedRef<string | number> = computed(() => options.width ?? 256)
+  const miniWidth: ComputedRef<string | number> = computed(() => options.miniWidth ?? 64)
   const float: ComputedRef<boolean> = computed(() => options.float ?? false)
+  const right: ComputedRef<boolean> = computed(() => options.right ?? false)
 
   const isMini: Ref<boolean> = ref(options.mini ?? false)
 
@@ -43,6 +46,7 @@ export function useAside(options: UseAsideOptions = {}) {
     width,
     miniWidth,
     float,
+    right,
     isMini,
     currentWidth,
     toggle,

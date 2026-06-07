@@ -16,6 +16,21 @@
 @use './components/list' as *;
 @use './components/icon' as *;
 @use './components/button' as *;
+@use './components/card' as *;
+@use './components/overlay' as *;
+@use './components/dialog' as *;
+@use './components/input' as *;
+@use './components/text-field' as *;
+@use './components/checkbox' as *;
+@use './components/radio' as *;
+@use './components/switch' as *;
+@use './components/form' as *;
+@use './components/select' as *;
+@use './components/pagination' as *;
+@use './components/menu' as *;
+@use './components/tabs' as *;
+@use './components/expansion-panel' as *;
+@use './components/snack-bar' as *;
 
 // 4. 混合宏（工具类）
 @forward './mixins';

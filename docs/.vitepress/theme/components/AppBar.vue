@@ -28,7 +28,7 @@ const isMobile = inject('isMobile')
     <div class="app-bar__brand">
       <a class="app-bar__logo" :href="withBase('/')">
         <span class="app-bar__logo-mark">∞</span>
-        <span class="app-bar__logo-text">Infinity UI</span>
+        <span class="app-bar__logo-text">Infinite UI</span>
       </a>
       <IButton
         v-if="isMobile"

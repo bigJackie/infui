@@ -1,8 +1,7 @@
 import { computed } from 'vue'
+import { toUnit, useBlock } from '../shared'
 import type { ButtonProps } from './useButton'
 
-const toUnit = (val?: string | number) =>
-  val == null ? undefined : typeof val === 'number' ? `${val}px` : val
 
 export function useButtonStyle(props: ButtonProps, isDisabled: () => boolean) {
   const classes = computed(() => ({
@@ -18,10 +17,13 @@ export function useButtonStyle(props: ButtonProps, isDisabled: () => boolean) {
     'i-btn--icon-only': !!props.iconOnly,
   }))
 
-  const styles = computed(() => ({
-    width: toUnit(props.width),
-    height: toUnit(props.height),
-  }))
+  const styles = useBlock(
+    props,
+    computed(() => ({
+      width: toUnit(props.width),
+      height: toUnit(props.height),
+    })),
+  )
 
   return { classes, styles }
 }
