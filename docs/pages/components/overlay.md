@@ -29,13 +29,13 @@ components/overlay/persistent
 
 ### 属性
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
+| 属性名 | 类型 | 默认值     | 说明 |
+| --- | --- |---------| --- |
 | `modelValue` | `boolean` | `false` | 控制显示/隐藏（支持 `v-model`） |
 | `persistent` | `boolean` | `false` | 点击遮罩或 Esc 时阻止关闭 |
-| `scrim` | `boolean` | `true` | 是否显示半透明遮罩背景 |
-| `closeOnEsc` | `boolean` | `true` | 是否监听 Esc 关闭 |
-| `zIndex` | `number` | `2000` | 根层级 |
+| `scrim` | `boolean` | `true`  | 是否显示半透明遮罩背景 |
+| `closeOnEsc` | `boolean` | `true`  | 是否监听 Esc 关闭 |
+| `zIndex` | `number` | `301`   | 根层级 |
 | `block` | `boolean` | `false` | 低代码场景下铺满父容器 |
 
 ### 事件

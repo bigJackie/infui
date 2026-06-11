@@ -2,7 +2,7 @@ import { computed } from 'vue'
 
 export interface InputProps {
   /** 当前输入值（v-model） */
-  modelValue?: string
+  modelValue?: string | number
   /** 字段标签文本 */
   label?: string
   /** 原生 placeholder */
@@ -72,4 +72,3 @@ export function useInput(props: InputProps, emit: InputEmit) {
     clear,
   }
 }
-

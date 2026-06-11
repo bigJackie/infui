@@ -9,7 +9,7 @@ const props = withDefaults(defineProps<OverlayProps>(), {
   persistent: false,
   scrim: true,
   closeOnEsc: true,
-  zIndex: 2000,
+  zIndex: 301,
   block: false,
 })
 
@@ -35,5 +35,3 @@ const overlayClasses = computed(() => [classes.value, `i-application--${globalTh
     </div>
   </Teleport>
 </template>
-
-
