@@ -13,6 +13,8 @@
 
 </div>
 
+## 文档与指南
+[Infinite UI在线文档](https://jackiewong.top/projects/infui/)
 
 ## 特性
 
@@ -53,9 +55,6 @@ createApp(App).use(InfUI).mount('#app')
 import { IButton, IInput } from '@jackiew/inf-ui'
 import '@jackiew/inf-ui/style'
 ```
-
-## 文档与指南
-[Infinite UI在线文档](https://jackiewong.top/projects/infui/)
 
 ## 工作区说明
 
