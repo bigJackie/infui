@@ -1,6 +1,6 @@
 {
   "name": "@inf-ui/theme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Infui theme package",
   "main": "./dist/index.css",

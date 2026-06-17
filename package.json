@@ -2,7 +2,7 @@
   "name": "@jackiew/infui",
   "private": true,
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "description": "Infui is a Vue 3 UI framework based on Infcss, providing a set of high-quality, customizable components and utilities to help developers build modern web applications with ease.",
   "scripts": {
     "publish:all": "pnpm -r --filter=./packages/* publish --access public --no-git-checks --registry https://registry.npmjs.org/",
